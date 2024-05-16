@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: "0f31ed39eb5424289ad899124c69e353",
+        };
+    </script>
+    <script type="text/javascript"
+        src="//webapi.amap.com/maps?v=2.0&key=796c90e5deddd306a9302296613aaa0c&plugin=AMap.ControlBar,AMap.ToolBar,AMap.DistrictSearch,AMap.Scale,AMap.HawkEye,AMap.Geocoder,AMap.Driving,AMap.Transfer,AMap.Geocoder,AMap.Walking,AMap.Riding,AMap.MapboxVectorTileLayer"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/loca?v=2.0.0&key=6107793208cdb5d776c4cdf0aae18e80"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link rel="stylesheet" href="mapStyle.css">
+</head>
+
+<body>
+    <div id="container"></div>
+    <div id="panel"></div>
+    <div id="panelPOI"></div>
+    <div id="pieChart"></div>
+    <div id="barChart"></div>
+
+    <div class="InfoBox" id="positionInfoBox">
+        <h4>地图级别与中心坐标</h4>
+        <p>当前缩放级别<br><span id="map-zoom"></span></p>
+        <p>当前中心点坐标<span id="map-center"></span></p>
+    </div>
+
+    <div class="InfoBox" id="weatherForecastsBox">
+        <h4>预报天气</h4>
+        <hr>
+        <p id="forecast"></p>
+    </div>
+
+    <div class="functionBox" id="weatherBox">
+        <button id="weatherButton">天气查询</button>
+        <input id="weatherInput" placeholder="请输入城市名称">
+    </div>
+
+    <div class="functionBox" id="POIsearchBox">
+        <button id="POIsearchButton">地点搜索</button>
+        <button id="POIdeleteButton">清除点位</button>
+        <input id="POImsgInput" placeholder="请输入关键词">
+    </div>
+
+    <div class="functionBox" id="routeBox">
+        <div id="routInputAndDelBox">
+            <div id="routeInputBox">
+                <input id="startInput" placeholder="请输入出发地">
+                <input id="endInput" placeholder="请输入目的地">
+            </div>
+            <button id="routeButton">路径规划</button>
+        </div>
+        <div id="routeChooseBox">
+            <button id="panelCloseButton">清除路径</button>
+            <p id="routeTypeText">交通方式
+                <select id="routeType">
+                    <option value="driving">驾车</option>
+                    <option value="walking">步行</option>
+                    <option value="riding">骑行</option>
+                    <option value="transfer">公交</option>
+                </select>
+            </p>
+        </div>
+    </div>
+
+    <div class="functionBox" id="boundBox">
+        <div id="featureChooseBox">
+            <button id="boundButton">新疆维吾尔自治区行政边界</button>
+            <button id="travelRoutes">推荐旅游路线</button>
+        </div>
+        <fieldset id="checkboxDiv">
+            <legend>选择显示景点</legend>
+            <div>
+                <input type="checkbox" name="5A" checked />
+                <label for="5A">5A</label>
+
+                <input type="checkbox" name="4A" checked />
+                <label for="4A">4A</label>
+
+                <input type="checkbox" name="3A" checked />
+                <label for="3A">3A</label>
+
+                <input type="checkbox" name="2A" checked />
+                <label for="2A">2A</label>
+
+                <input type="checkbox" name="1A" checked />
+                <label for="1A">1A</label>
+            </div>
+        </fieldset>
+        <button id="showChart">显示统计表格</button>
+    </div>
+
+    <a href="homepage.html" target="_blank">
+        <button id="homeButton">
+            <img src="datas/home.svg">
+            <p>返回主页</p>
+        </button>
+    </a>
+
+    <script src="POIsearch.js"></script>
+    <script src="baseFunctions.js"></script>
+    <script src="routeFunctions.js"></script>
+    <script src="travelRoute.js"></script>
+</body>
+
+</html>

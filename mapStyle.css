@@ -1,0 +1,365 @@
+html,
+body,
+#container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+button {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 3px;
+    background-color: #008B8B;
+    box-shadow: 0px 0px 5px #00555577;
+    height: 40px;
+    transition: 0.1s;
+    line-height: 15px;
+}
+
+button:hover {
+    background-color: #006d6dba !important;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #005555 !important;
+    cursor: pointer;
+}
+
+Input {
+    outline: none;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #19197051;
+    min-width: 0px;
+    word-wrap: break-word;
+}
+
+
+legend {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #008B8B;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+input[type="checkbox"] {
+    box-shadow: none;
+    margin-right: -1px;
+    cursor: pointer;
+}
+
+label {
+    margin-right: 6px;
+    font-size: 13px;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+    width: 13px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    /* border-radius: 3px; */
+    background-color: #ffffff;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    /* border-radius: 10px; */
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #008B8B;
+    cursor: pointer;
+}
+
+.InfoBox {
+    color: white;
+    background-color: rgb(65, 105, 225);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgb(65, 105, 225);
+    padding: 10px;
+    align-items: center;
+    min-width: 0px;
+    position: absolute;
+    transition: 0.5s;
+}
+
+.functionBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    position: absolute;
+    left: 10px;
+    width: 220px;
+    height: auto;
+}
+
+.info-close {
+    position: absolute;
+    height: auto;
+    top: 5px;
+    right: 5px;
+    color: white;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+#barChart,
+#pieChart {
+    background-color: white;
+    width: 800px;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    bottom: -600px;
+    margin-left: 400px;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: 0px 10px 10px #00555577;
+}
+
+#barChart {
+    height: 400px;
+}
+
+#POIsearchBox,
+#boundBox,
+#routeBox,
+#weatherBox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+#weatherBox {
+    top: 10px;
+}
+
+#POIsearchBox {
+    top: 80px;
+}
+
+#routeBox {
+    flex: 1;
+    top: 150px;
+    flex-direction: column;
+}
+
+#boundBox {
+    top: 270px;
+    flex-direction: column;
+}
+
+#featureChooseBox,
+#routeChooseBox {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+}
+
+#routeTypeText {
+    text-align: center;
+    flex: 2;
+    font-weight: bold;
+    padding: 3px;
+    color: #ffffff;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 3px;
+    background-color: #008B8B;
+    box-shadow: 0px 0px 5px #00555577;
+}
+
+#routeType {
+    margin-left: 5px;
+    width: auto;
+    height: 34px;
+}
+
+#routInputAndDelBox {
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #00555577;
+    display: flex;
+    flex-direction: row;
+}
+
+#routeInputBox {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px #00555577;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+    height: 40px;
+    row-gap: 0;
+}
+
+#weatherForecastsBox {
+    text-align: center;
+    position: fixed;
+    top: -200px;
+    width: auto;
+    border-width: 0;
+    right: 155px;
+}
+
+#positionInfoBox {
+    text-align: center;
+    width: 140px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    bottom: 180px;
+    right: 0px;
+}
+
+#weatherInfoBox {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    position: inherit;
+    padding: 10px;
+}
+
+#weatherForecastsBox h4,
+#positionInfoBox h4,
+#weatherInfoBox h4 {
+    line-height: 15px;
+    font-weight: bold;
+}
+
+#centerPoint {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+    pointer-events: none;
+}
+
+#boundButton {
+    flex: 1;
+}
+
+#POIdeleteButton {
+    margin-left: -8px;
+}
+
+#POIdeleteButton,
+#POIsearchButton,
+#weatherButton {
+    flex: 1;
+    width: auto;
+}
+
+#panelCloseButton {
+    flex: 1;
+    width: auto;
+}
+
+#routeButton {
+    font-size: 13px;
+    border-radius: 0 5px 5px 0;
+    box-shadow: none;
+    flex: 1.5;
+}
+
+#homeButton img {
+    height: 30px;
+    width: 30px;
+}
+
+#homeButton {
+    padding: 5px;
+    height: 55px;
+    position: absolute;
+    top: 460px;
+    left: 10px;
+}
+
+#panelCloseButton:hover,
+#info-close:hover {
+    background-color: #009d9d !important;
+}
+
+#panelCloseButton:active,
+#info-close:active {
+    background-color: #005555;
+}
+
+#POImsgInput {
+    flex: 3;
+}
+
+#weatherInput {
+    flex: 2;
+}
+
+#startInput,
+#endInput {
+    background-color: white;
+    border-bottom: solid;
+    border-color: #008B8B;
+    border-width: 1px;
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+#endInput {
+    border-top: solid;
+    border-width: 1px;
+}
+
+#panelPOI,
+#panel {
+    position: fixed;
+    background-color: white;
+    max-height: 80%;
+    overflow-y: auto;
+    top: 20px;
+    right: 160px;
+    width: 280px;
+    z-index: 10;
+    transition: 0.3s;
+    border-top-left-radius: 10px;
+}
+
+#panel .amap-call {
+    background-color: rgb(65, 105, 225);
+    border-top-left-radius: 10px;
+}
+
+/* #panel .amap-lib-driving {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: hidden;
+} */
+
+#checkboxDiv {
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 5px #19197051;
+    border-radius: 5px;
+    padding: 10px;
+}
